@@ -1,11 +1,11 @@
 {
-  "name": "recuperador-de-vendas",
-  "description": "recuperador de vendas para api loja integrada",
+  "name": "e-colab-worker",
+  "description": "recuperador de vendas para api loja integrada - e-colab version",
   "version": "0.0.1",
   "private": false,
   "repository": {
     "type": "git",
-    "url": "git@github.com:afonso-praca/recuperador-de-vendas.git"
+    "url": "git@github.com:afonso-praca/e-colab-worker.git"
   },
   "main": "index.js",
   "scripts": {

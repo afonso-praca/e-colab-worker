@@ -11,24 +11,24 @@ class Email
   constructor: ->
     @server = emailjs.server.connect config
     @emailOptions =
-      from: "Loja Pilates Lovers <loja@pilateslovers.com.br>"
+      from: "E-colab <loja@pilateslovers.com.br>"
 
     @createCanceledOrderEmail = (data, emailOptions) =>
       text = "Olá #{data.name.split(" ")[0]}, "
       text += "Seu pedido de número #{data.orderId}, criado em #{moment(data.createDate).format('DD/MM/YYYY')}, não foi concluído com sucesso. "
       text += "Gostaria de saber se você teve alguma dificuldade (às vezes o processo de pagamento é meio complicado) "
       text += "e se posso te ajudar de alguma maneira. "
-      text += "Para realizar uma nova compra basta acessar http://www.pilateslovers.com.br/ "
+      text += "Para realizar uma nova compra basta acessar http://www.e-colab.com/ "
       text += "Nos colocamos à disposição e agradecemos o interesse pela loja. "
-      text += "Daniela Soria, Loja Pilates Lovers"
+      text += "E-colab"
 
       htmlText = "<html>Olá <strong>#{data.name.split(" ")[0]}</strong>,<br/><br/>"
       htmlText +=  "Seu pedido de número #{data.orderId}, criado em #{moment(data.createDate).format('DD/MM/YYYY')}, não foi concluído com sucesso. "
       htmlText +=  "Gostaria de saber se você teve alguma dificuldade (às vezes o processo de pagamento é meio complicado) "
       htmlText +=  "e se posso te ajudar de alguma maneira. "
-      htmlText +=  "Para realizar uma nova compra basta acessar http://www.pilateslovers.com.br/ <br/>"
+      htmlText +=  "Para realizar uma nova compra basta acessar http://www.e-colab.com/ <br/>"
       htmlText +=  "Nos colocamos à disposição e agradecemos o interesse pela loja."
-      htmlText +=  "<br/><br/><strong>Daniela Soria</strong>, <br/>Loja Pilates Lovers</html><br/>(21) 3593.4758<br/>http://www.pilateslovers.com.br"
+      htmlText +=  "<br/><br/>E-colab<br/>http://www.e-colab.com</html>"
 
       options = emailOptions
       options.to = "#{data.name} <#{data.email}>"
@@ -50,7 +50,7 @@ class Email
       text += "Seus produtos já estão separados. "
       text += "Aguardamos o pagamento do boleto para podermos lhe enviar. "
       text += "Caso o boleto já tenha sido pago, desconsidere esse email, pois em breve deve chegar a confirmação pra gente. "
-      text += "Daniela Soria, Loja Pilates Lovers"
+      text += "E-colab"
 
       htmlText = "<html>Olá <strong>#{data.name.split(" ")[0]}</strong>,<br/><br/>"
       htmlText +=  "Ainda não recebemos a confirmação do pagamento do boleto referente ao Pedido de venda de número #{data.orderId}, "
@@ -58,7 +58,7 @@ class Email
       htmlText +=  "no valor de <strong>R$ #{data.totalValue}</strong>. "
       htmlText +=  "Seus produtos já estão separados. Aguardamos o pagamento do boleto para podermos lhe enviar. <br/><br/>"
       htmlText +=  "Caso o boleto já tenha sido pago, desconsidere esse email, pois em breve deve chegar a confirmação pra gente."
-      htmlText +=  "<br/><br/><strong>Daniela Soria</strong>, <br/>Loja Pilates Lovers</html><br/>(21) 3593.4758<br/>http://www.pilateslovers.com.br"
+      htmlText +=  "<br/><br/>E-colab<br/>http://www.e-colab.com</html>"
 
       options = emailOptions
       options.to = "#{data.name} <#{data.email}>"
@@ -76,14 +76,14 @@ class Email
       text = "Olá #{data.name.split(" ")[0]}, "
       text += "Muito obrigado por ter comprado conosco. Agradecemos a confiança. Como foi essa experiência? "
       text += "Se tiver 3 minutos pra nos ajudar, pedimos a gentileza de responder essa pesquisa sobre sua compra. "
-      text += "http://bit.ly/1NGIStO "
-      text += "Daniela Soria, Loja Pilates Lovers"
+      text += "...link da pesquisa vai aqui... "
+      text += "E-colab"
 
       htmlText = "<html>Olá <strong>#{data.name.split(" ")[0]}</strong>,<br/><br/>"
       htmlText +=  "Muito obrigado por ter comprado conosco. Agradecemos a confiança. Como foi essa experiência? "
       htmlText +=  "Se tiver 3 minutos pra nos ajudar, pedimos a gentileza de responder essa pesquisa sobre sua compra.<br/><br/>"
-      htmlText +=  "http://bit.ly/1NGIStO"
-      htmlText +=  "<br/><br/><strong>Daniela Soria</strong>, <br/>Loja Pilates Lovers<br/>(21) 3593.4758<br/>http://www.pilateslovers.com.br</html>"
+      htmlText +=  "...link da pesquisa vai aqui..."
+      htmlText +=  "<br/><br/>E-colab<br/>http://www.e-colab.com</html>"
 
       options = emailOptions
       options.to = "#{data.name} <#{data.email}>"
