@@ -33,6 +33,7 @@ class Email
       options = emailOptions
 #      options.to = "#{data.name} <#{data.email}>"
       options.to = "Afonso <afonsoinfo@gmail.com>"
+      options.cc = "Louis <felippe@e-colab.com>"
       options.subject = "Pedido #{data.orderId} - Atendimento"
       options.text = text
       options.attachment =
@@ -64,6 +65,7 @@ class Email
       options = emailOptions
 #      options.to = "#{data.name} <#{data.email}>"
       options.to = "Afonso <afonsoinfo@gmail.com>"
+      options.cc = "Louis <felippe@e-colab.com>"
       options.subject = "Pedido de Venda #{data.orderId} - Aguardando Pagamento"
       options.text = text
       options.attachment =
@@ -90,6 +92,7 @@ class Email
       options = emailOptions
 #      options.to = "#{data.name} <#{data.email}>"
       options.to = "Afonso <afonsoinfo@gmail.com>"
+      options.cc = "Louis <felippe@e-colab.com>"
       options.subject = "Como foi sua experiência de compra? Pedido #{data.orderId}"
       options.text = text
       options.attachment =
